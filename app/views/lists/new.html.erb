@@ -1,0 +1,9 @@
+<h1>Add List</h1>
+
+<%= simple_form_for(@list) do |l| %>
+    <%= l.input :name, placeholder: 'Mission Cléopatre' %>
+    <%= l.submit :submit %>
+<% end %>
+
+<br>
+<%= link_to 'Lists', lists_path, class: 'btn btn-success'  %>
