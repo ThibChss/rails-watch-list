@@ -5,7 +5,9 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  def show() end
+  def show
+    @review = Review.new(list: @list)
+  end
 
   def new
     @list = List.new
@@ -27,6 +29,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end

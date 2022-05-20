@@ -1,4 +1,14 @@
-<h1> <%= @list.name %></h1>
+<div class="navbar">
+  <i class="fad fa-popcorn"></i>
+  <div>
+    <%= link_to 'Lists', root_path, class: 'btn btn-success'  %>
+    <%= link_to 'Add Movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>')">
+  <h1><%= @list.name %></h1>
+</div>
 
 <ul>
   <% @list.movies.each do |m| %>
@@ -8,5 +18,16 @@
   <% end %>
 </ul>
 
-<%= link_to 'Lists', lists_path, class: 'btn btn-success'  %>
-<%= link_to 'Add Movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+<%= simple_form_for [@list, @review] do |l| %>
+    <%= l.input :content %>
+    <%= l.input :rating %>
+    <%= l.submit :submit %>
+<% end %>
+
+<ul>
+  <% @list.reviews.each do |r| %>
+    <li><%= r.content %></li>
+    <li><%= r.rating %></li>
+    <%= link_to "Delete", review_path(r), data: { turbo_method: :delete, turbo_confirm: "Do you want to remove this movie ?" } %>
+  <% end %>
+</ul>

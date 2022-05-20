@@ -11,6 +11,9 @@
 }
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0.03);
   padding: 10px;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
