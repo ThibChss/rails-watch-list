@@ -1,0 +1,15 @@
+.banner {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1 {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-size: 80px;
+}

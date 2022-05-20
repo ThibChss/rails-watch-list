@@ -1,9 +1,19 @@
-<h1>Lists</h1>
+<div class="navbar">
+  <i class="fad fa-popcorn"></i>
+  <%= link_to 'Create List', new_list_path, class: 'btn btn-primary' %>
+</div>
 
-<ul>
-  <% @lists.each do |l| %>
-    <li><%= link_to l.name, list_path(l) %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image:url('https://images.pexels.com/photos/1200450/pexels-photo-1200450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'), linear-gradient(90deg, rgba(0,0,0,0.4),rgba(0,0,0,0.4))">
+  <h1>Lists</h1>
+</div>
 
-<%= link_to 'Create List', new_list_path  %>
+
+<div class="container">
+
+      <% @lists.each do |l| %>
+        <div class="card card-category" style="background-image: url(<%= "https://picsum.photos/800/300?grayscale&random=#{rand(1..100)}" %>)">
+            <%= link_to l.name, list_path(l) %>
+        </div>
+      <% end %>
+
+</div>
